@@ -71,8 +71,8 @@ Une tâche a la structure suivante :
 ```json
 {
   "id": 1,
-  "title": "Ma tâche",
-  "completed": false
+  "titre": "Ma tâche",
+  "completee": false
 }
 ```
 
@@ -99,12 +99,12 @@ curl http://localhost:3000/todos
 # POST a new todo
 curl -X POST http://localhost:3000/todos \
   -H "Content-Type: application/json" \
-  -d '{"title": "Ma nouvelle tâche"}'
+  -d '{"titre": "Ma nouvelle tâche"}'
 
 # PUT update a todo
 curl -X PUT http://localhost:3000/todos/1 \
   -H "Content-Type: application/json" \
-  -d '{"title": "Tâche modifiée", "completed": true}'
+  -d '{"titre": "Tâche modifiée", "completee": true}'
 
 # DELETE a todo
 curl -X DELETE http://localhost:3000/todos/1
