@@ -8,25 +8,28 @@ Une application complète de gestion de tâches (Todo app) avec un serveur Expre
 todoapp/
 ├── backend/           # Serveur Express (Node.js)
 │   ├── controller/    # Logique métier
+│   │   └── todos.js   # Contrôleur des tâches
 │   ├── routes/        # Définition des routes
+│   │   └── todos.js   # Routes des tâches
 │   ├── app.js         # Application principale
 │   ├── data.json      # Base de données (fichier JSON)
 │   └── package.json   # Dépendances
 ├── frontend/          # Interface utilisateur
 │   ├── index.html     # Page HTML
-│   ├── style.css      # Styles
+│   ├── style.css      # Styles CSS
 │   └── script.js      # Logique JavaScript
-└── .gitignore
+└── README.md          # Cette documentation
 ```
 
 ## Installation
 
-1. **Backend** - Depuis le répertoire `backend/` :
+### Backend - Depuis le répertoire `backend/` :
 ```bash
 npm install
 ```
 
-2. **Frontend** - Pas de dépendances, juste ouvrir `index.html` dans le navigateur.
+### Frontend
+Pas de dépendances, juste ouvrir `index.html` dans le navigateur.
 
 ## Démarrage
 
@@ -122,4 +125,3 @@ curl -X DELETE http://localhost:3000/todos/1
 - Le serveur écoute sur le port 3000
 - CORS est activé pour permettre les requêtes cross-origin
 - Nodemon redémarre automatiquement le serveur lors des modifications
-# tp-todo-app-vito

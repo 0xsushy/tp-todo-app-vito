@@ -7,8 +7,8 @@ const port = 3000;
 app.use(cors({ origin: '*' }));
 app.use(express.json());
 
-const routesTaches = require('./routes/todos');
-app.use('/todos', routesTaches);
+const routesTodos = require('./routes/todos');
+app.use(routesTodos);
 
 app.get('/', (req, res) => {
   res.json({ message: 'API Todo App' });
