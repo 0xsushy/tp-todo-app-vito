@@ -46,13 +46,6 @@ const afficherTaches = (taches) => {
   });
 };
 
-// Ajouter event listeners
-boutonAjouter.addEventListener('click', ajouterTache);
-champEntree.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') ajouterTache();
-});
-
-// CRUD - CREATE
 const ajouterTache = async () => {
   const titre = champEntree.value.trim();
 
@@ -82,7 +75,6 @@ const ajouterTache = async () => {
   }
 };
 
-// CRUD - UPDATE (basculer complétée)
 const basculerTache = async (id) => {
   try {
     const reponse = await fetch(`${URLapi}/${id}`);
@@ -104,7 +96,6 @@ const basculerTache = async (id) => {
     console.error(err);
   }
 };
-// CRUD - UPDATE (modifier titre)
 
 const modifierTache = (id) => {
   const nouveauTitre = prompt('Modifier la tâche:');
@@ -139,7 +130,6 @@ const mettreAJourTache = async (id, titre) => {
     console.error(err);
   }
 };
-// CRUD - DELETE
 
 const supprimerTache = async (id) => {
   if (!confirm('Êtes-vous sûr de vouloir supprimer cette tâche ?')) return;
@@ -160,7 +150,6 @@ const supprimerTache = async (id) => {
     afficherErreur('Erreur lors de la suppression de la tâche');
     console.error(err);
   }
-// Fonctions utilitaires
 };
 
 const afficherErreur = (message) => {
@@ -181,7 +170,11 @@ const echapperHtml = (texte) => {
     "'": '&#039;'
   };
   return texte.replace(/[&<>"']/g, m => correspondance[m]);
-// Charger les tâches au démarrage de la page  if (e.key === 'Enter') ajouterTache();
+};
+
+boutonAjouter.addEventListener('click', ajouterTache);
+champEntree.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') ajouterTache();
 });
 
 chargerTaches();
